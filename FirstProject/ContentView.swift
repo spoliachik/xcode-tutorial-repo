@@ -8,9 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var isTextShowing = true
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            if isTextShowing {
+                Text("Hello, world!")
+                    .padding()
+                    .font(.title)
+            } else {
+                Text("")
+            }
+            Button(action: {
+                isTextShowing.toggle()
+            }) {
+                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+            }
+        }
     }
 }
 
